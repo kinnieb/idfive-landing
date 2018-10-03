@@ -14,7 +14,6 @@
   src: url("fonts/Proxima-Nova-Bold.otf") format('opentype');
 }
 
-
 $purple: #6638b6;
 
 body {
@@ -82,6 +81,23 @@ a{
   }
 }
 
+.text-link{
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    @include transition(all .25s ease-in-out);
+  }
+  &:hover{
+    width: 100%;
+  }
+}
+
 .bg{
   position: absolute;
   width: 100%;
@@ -113,3 +129,373 @@ a{
   }
 }
 
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 2;
+  padding: 33px;
+  pointer-events: none;
+  @include box-sizing(border-box);
+  .logo{
+    float: left;
+  }
+  button{
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    top: 70px;
+    right: 30px;
+    font-size: 18px;
+    background: transparent;
+    pointer-events: auto;
+    div{
+      display: inline-block;
+      padding-left: 20px;
+      span{
+        width: 20px;
+        height: 2px;
+        display: block;
+        background: #fff;
+        &:nth-child(2){
+          margin: 3px 0;
+        }
+      }
+    }
+
+  }
+}
+
+menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  background: $purple;
+  padding: 165px 35px;
+  @include box-sizing(border-box);
+  @include transform(translateX(100%));
+  @include transition(transform .3s);
+  @include breakpoint(tablets){
+    max-width: 400px;
+  }
+  .close-menu{
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 18px;
+    img{
+      padding-left: 20px;
+    }
+  }
+  a{
+    position: relative;
+    display: table;
+    color: #fff;
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+    @include breakpoint(tablets){
+      font-size: 2.1875rem;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      background: #fff;
+      width: 0;
+      height: 3px;
+      @include transition(all .25s ease-in-out);
+    }
+    &:hover{
+      &:after{
+        width: 100%;
+      }
+    }
+
+  }
+  div{
+    a{
+      font-family: "ProximaBold";
+    }
+  }
+  form{
+    .field{
+      width: 300px;
+      height: 40px;
+      position: relative;
+      border: 4px solid #fff;
+      input{
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        color: #fff;
+        padding: 10px;
+        outline: none;
+        &.submit{
+          position: absolute;
+          width: 100px;
+          height: 100%;
+          right: 0;
+          top: 0;
+        }
+      }
+      img{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 20px;
+      }
+    }
+  }
+  &.open{
+    @include transform(translateX(0));
+  }
+}
+
+.overlay{
+  position: fixed;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  @include transition(.25s all ease-in-out);
+  &.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+#container{
+  section{
+    position: relative;
+    .wrapper{
+      .title{
+        //font-family: ProximaBold;
+      }
+      .subtitle{
+        font-size: 2rem;
+        line-height: 135%;
+      }
+      br{
+        display: none;
+        @include breakpoint(nineteen){
+          display: block;
+        }
+      }
+    }
+    &#welcome{
+      background: url(../assets/inanc-avadit-571215-unsplash.jpg) top center;
+      background-size: cover;
+      min-height: 100vh;
+      .wrapper{
+        color: #fff;
+        padding: 325px 30px 334px;
+        font-size: 2.8rem;
+        @include breakpoint(tablets){
+          height: 100vh;
+          padding: 0 125px;
+          font-size: 4.25rem;
+        }
+        .title{
+          font-family: "ProximaBold";
+          @include text-shadow(0 0 15px rgba(0,0,0,.4));
+        }
+        .button{
+          margin-top: 50px;
+        }
+      }
+      .scroll-down{
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        margin-left: -25px;
+        cursor: pointer;
+        &:hover{
+          bottom: 45px;
+        }
+      }
+    }
+    &#main{
+      .wrapper{
+        text-align: center;
+        padding: 150px 30px 0;
+        @include breakpoint(twelve){
+          padding: 165px 40px;
+        }
+        .subtitle{
+          margin-bottom: 110px;
+        }
+        .item{
+          width: 100%;
+          display: block;
+          margin: 0 auto 57px;
+          @include breakpoint(tablets){
+            width: 332px;
+          }
+          @include breakpoint(twelve){
+            display: inline-block;
+            margin-bottom: 0;
+            &:nth-of-type(2){
+              margin: 0 80px;
+            }
+          }
+          .icon{
+            position: relative;
+            background: $purple;
+            height: 100px;
+            width: 100px;
+            margin: 0 auto -50px;
+            @include border-radius(50%);
+          }
+          figure{
+            min-height: 284px;
+            background: top center no-repeat #aaa;
+            background-size: cover;
+          }
+          .copy{
+            font-weight: bold;
+            font-family: "proximaBold";
+            padding-top: 34px;
+          }
+        }
+      }
+    }
+    &#action{
+      background: $purple;
+      .wrapper{
+        padding: 139px 34px 160px;
+        color: #fff;
+        text-align: center;
+        .copy{
+          line-height: 135%;
+          padding-bottom: 60px;
+          @include breakpoint(twelve){
+            br{display: block;}
+          }
+          @include breakpoint(nineteen){
+            text-align: left;
+            float: left;
+            margin: 0 200px 0 120px;
+          }
+        }
+        .button{
+          @include breakpoint(nineteen){
+            float: left;
+            top: -20px;
+          }
+        }
+      }
+    }
+    &#cards{
+      figure{
+        background: top center no-repeat;
+        background-size: cover;
+        height: 305px;
+        @include breakpoint(tablets){
+          width: 50%;
+          height: 50vh;
+          float: left;
+        }
+        @include breakpoint(nineteen){
+          height: 670px;
+        }
+      }
+      span{
+        height: 305px;
+        @include breakpoint(tablets){
+          width: 50%;
+          height: 50vh;
+          float: left;
+        }
+        @include breakpoint(nineteen){
+          height: 670px;
+        }
+        .subtitle{
+          padding: 58px 42px;
+          text-align: center;
+          @include breakpoint(tablets){
+            padding: 30px;
+          }
+          @include breakpoint(ten){
+            padding: 0 130px;
+            text-align: left;
+          }
+        }
+      }
+      .item:first-child{
+        figure{
+          @include breakpoint(tablets){
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer{
+  background: $purple;
+  padding: 60px 0 110px;
+  text-align: center;
+  color: #fff;
+  @include breakpoint(twelve){
+    height: 395px;
+    padding: 0;
+  }
+  span.table{
+    display: block;
+    width: 100%;
+    @include breakpoint(twelve){
+      width: 25%;
+      display: inline-table !important;
+      float: left;
+      text-align: left;
+    }
+    .cell{
+      display: block;
+      padding-top: 60px;
+      line-height: 135%;
+      @include breakpoint(tablets){
+        display: table-cell;
+        text-align: left;
+      }
+      a{
+        color: #fff;
+        display: table;
+        margin: 0 auto;
+        @include breakpoint(tablets){
+          margin:0;
+          &.logo{
+            margin: 0 auto;
+          }
+        }
+      }
+      &.links{
+        a{
+          font-weight: bold;
+        }
+      }
+      .social{
+        padding-bottom: 15px;
+        a{
+          display: inline-block;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}

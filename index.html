@@ -6,13 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--Styles-->
     <link rel="stylesheet" type="text/css" href="css/screen.css">
-    <!-- font -->
+    <!-- js -->
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=4.5.4'></script>
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-
-
-
-
+    <header>
+        <a href="#"><img src="assets/idfive-logo.svg" /></a>
+        <button class="open-menu">MENU<div class="ease"><span></span><span></span><span></span></div></button>
+    </header>
+    <menu>
+        <button class="close-menu">close<img class="ease" src="assets/close-icon.svg" /></button>
+        <div>
+            <a href="#">About us</a>
+            <a href="#">Our Work</a>
+            <a href="#">Meet the Team</a>
+        </div>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+        <form action="#" method="post" id="search-form" name="search-form">
+            <div class="field">
+                <input type="input" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Search">
+                <input class="submit" type="submit" name="Submit" value="">
+                <img src="assets/search.svg" />
+            </div>
+        </form>
+    </menu>
+    <div class="overlay bg close-menu"></div>
+    <div id="container">
+        <section id="welcome">
+            <div class="wrapper table">
+                <div class="cell">
+                    <h1 class="copy title">Lorem ipsum dolor sit<br /> amet, consectetur<br /> adipiscing elit.</h1>
+                    <a href="#" class="button"><span>CTA Button</span></a>
+                </div>
+            </div>
+            <img class="scroll-down ease" src="assets/scroll-down.png" />
+        </section>
+        <section id="main">
+            <div class="wrapper">
+                <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet<br /> pharatra ex. Ut eu feugiat magna. Sed fermentum sem ut fermentum<br /> fermentum. Duis dolor velit, dictum id imperdiet id imperdeit nec, lobortis a dolor.<br /> Curabitur non eros condimentum.</p>
+                <span class="item">
+                    <div class="icon table">
+                        <div class="cell">
+                            <img src="assets/speech-bubbles.svg" />
+                        </div>
+                    </div>
+                    <figure style="background-image:url(assets/headway-537308-unsplash.jpg)"></figure>
+                    <p class="copy">Lorem lpsum dolor sit amet</p>
+                </span>
+                <span class="item">
+                    <div class="icon table">
+                        <div class="cell">
+                            <img src="assets/paper-plane.svg" />
+                        </div>
+                    </div>
+                    <figure style="background-image:url(assets/jason-briscoe-152940-unsplash.jpg)"></figure>
+                    <p class="copy">Lorem lpsum dolor sit amet</p>
+                </span>
+                <span class="item">
+                    <div class="icon table">
+                        <div class="cell">
+                            <img src="assets/rocket.svg" />
+                        </div>
+                    </div>
+                    <figure style="background-image:url(assets/nathan-dumlao-451103-unsplash.jpg)"></figure>
+                    <p class="copy">Lorem lpsum dolor sit amet</p>
+                </span>
+            </div>
+        </section>
+        <section id="action">
+            <div class="wrapper">
+                <p class="copy">Lorem lpsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet pharetra ex. Ut eu feugiat magna. Sed fermentum sem ut<br /> fermentum fermentum, Duis dolor velit, dictum id imprediet nec, lobortis a dolor. Curabitur non eros condimentum.</p>
+                <a class="button"><span>CTA Button</span></a>
+            </div>
+        </section>
+        <section id="cards">
+            <div class="wrapper">
+                <div class="item">
+                    <figure style="background-image:url(assets/nordwood-themes-180852-unsplash.jpg)"></figure>
+                    <span class="table">
+                        <div class="cell">
+                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur<br /> adipiscing elit. Vivamus vitae convallis<br /> turpis. Nam hendrerit euismod lorem<br /> interdum tempus.</p>
+                        </div>
+                    </span>
+                    <div class="clear"></div>
+                </div>
+                <div class="item">
+                    <figure style="background-image:url(assets/kelly-sikkema-291518-unsplash.jpg)"></figure>
+                    <span class="table">
+                        <div class="cell">
+                            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur<br /> adipiscing elit. Vivamus vitae convallis<br /> turpis. Nam hendrerit euismod lorem<br /> interdum tempus.</p>
+                        </div>
+                    </span>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <span class="table">
+            <div class="cell">
+                <a href="#" class="logo"><img src="assets/idfive-logo.svg" /></a>
+            </div>
+        </span>
+        <span class="table">
+            <div class="cell">
+                <a href="https://goo.gl/maps/R6UiXynVKy52" target="_blank" class="address">81 Mosher Street, Third Floor<br />Baltimore, Maryland 21217</a>
+                <a href="tel:4108375555" class="phone">410.837.5555</a>
+            </div>
+        </span>
+        <span class="table">
+            <div class="cell links">
+                <a href="#">Contact Us</a>
+                <a href="#">Employment Opportunities</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </span>
+        <span class="table">
+            <div class="cell">
+                <div class="social">
+                    <a href="https://www.facebook.com/idfive" target="_blank"><img src="assets/facebook.png" /></a>
+                    <a href="https://twitter.com/idfive" target="_blank"><img src="assets/twitter.png" /></a>
+                </div>
+                Copyright &copy; 2009-2018.<br />
+                All rights reserved.
+            </div>
+        </span>
+    </footer>
 </body>
